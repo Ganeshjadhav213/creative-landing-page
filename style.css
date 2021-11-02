@@ -1,0 +1,233 @@
+:root{
+    --green:#27ae60;
+    --black:#192a56;
+    --light-color:#666;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: nunito, sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+*::selection{
+    background: var(--first);
+    color: #fff;
+}
+section{
+    padding: 2rem ;
+}
+section:nth-child(even){
+    background: #eee;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+body{
+    background:#f7f7f7;
+}
+.btn{
+    display: inline-block;
+    padding: .8rem 3rem;
+    border: none;
+    color:#fff;
+    font-size: 1.7rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    background: var(--black);
+    margin-top: 1rem;
+    z-index: 0;
+}
+.btn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0%;
+    height: 100%;
+    background: #27ae60;
+    transition: .3s linear;
+    z-index: -1;
+}
+.btn:hover::before{
+    width: 100%;
+    left: 0;
+}
+.btn:hover{
+    color: #fff;
+}
+.heading{
+    text-align: center;
+    font-size: 3.5rem;
+    color: var(--black);
+    padding: 1rem ;
+}
+.sub-heading{
+    text-align: center;
+    color: var(--green);
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 2rem 7%;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+}
+header input{
+    display: none;
+}
+header label {
+    font-size: 3rem;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    color: #555;
+
+}
+header .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color:var(--black);
+}
+.icons a,
+.icons i{
+    font-size: 1.7rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    width: 4.5rem;
+    text-align: center;
+    color: var(--black);
+    border-radius: 50%;
+    background: #eee;
+}
+.icons a:hover,
+.icons i:hover{
+    color: #fff;
+    background: var(--green);
+}
+header .navbar a{
+    font-size: 2rem;
+    padding: .5rem 1.5rem;
+    margin-left: 1rem;
+    color: var(--light-color);
+    border-radius: .5rem ;
+}
+header .navbar a.active,
+header .navbar a:hover{
+    color: #fff;
+    background: var(--green);
+    transform: rotate(360deg);
+}
+
+header a i{
+    color: var(--green);
+}
+
+header nav a:hover{
+    color: var(--first);
+}
+#menu{
+    display: none;
+}
+/* search section starts */
+#search-form{
+    position: fixed;
+    top: -110%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+}
+#search-form.active{
+    top: 0;
+}
+#search-form #search-box{
+    width: 50rem;
+    border-bottom: .1rem solid #fff;
+    font-size: 3rem;
+    text-transform: none;
+    background: none;
+    color: #eee;
+}
+#search-form #search-box::placeholder{
+    color: #eee;
+}
+#search-form #search-box::-webkit-search-cancel-button{
+    color: #eee;
+}
+#search-form label{
+    color: #eee;
+    cursor: pointer;
+    font-size: 3rem;
+    margin-left: 1rem;
+}
+#search-form label:hover{
+    color: var(--green);
+}
+#search-form #close{
+    font-size: 3rem;
+    color: #eee;
+    position: absolute;
+    top: 2rem;
+    right: 5rem;
+}
+
+/* home section starts */
+.home .home-slider .slide{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-top: 9rem;
+}
+.home .home-slider .slide .content{
+    flex: 1 1 45rem;
+}
+.home .home-slider .slide .image{
+    flex: 1 1 45rem;
+}
+.home .home-slider .slide .image img{
+    width: 100%;
+}
+.home .home-slider .slide .content span{
+    color: var(--green);
+    font-size: 2.5rem;
+    
+}
+.home .home-slider .slide .content h3{
+    color: var(--black);
+    font-size: 7rem;
+}
+.home .home-slider .slide .content p{
+    font-size: 2rem;
+    color: var(--light-color);
+    line-height: 1.5;
+    padding: .5rem 0;
+}
+.swiper-pagination-bullet-active{
+    background: var(--green);
+}
